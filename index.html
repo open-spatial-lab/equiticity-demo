@@ -1,0 +1,1155 @@
+<!-- base html file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Equiticity Transit Equity Explorer</title>
+  <script 
+    src="https://unpkg.com/@open-spatial-lab/full-bundle"
+    async
+    type="module"
+  ></script>
+</head>
+<body>
+
+<sp-theme>
+  <div>
+    <div style="display:flex;flex-direction:row; gap:1rem;">
+    <h1>Transit Equity Explorer</h1>
+    <osl-select-control
+      data=["https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1","https://d14xp4vykd1up4.cloudfront.net/data-query/656e38e4706aae0008b21e17","https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f","https://d14xp4vykd1up4.cloudfront.net/data-query/656e782d69e2370008020013","https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa","https://d14xp4vykd1up4.cloudfront.net/data-query/656e77fa69e2370008020012","https://d14xp4vykd1up4.cloudfront.net/data-query/6532789178d66b0009321d78","https://d14xp4vykd1up4.cloudfront.net/data-query/653289411fc91e0008ec7996","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47203443a800080913bd","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47483443a800080913be","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47d63443a800080913bf"]
+      option="start"
+      title="Start date"
+      initialValue="2019-01"
+      optionsData="https://d14xp4vykd1up4.cloudfront.net/data-query/656e304998b5d40008de1bb7"
+      optionsDataValueColumn="VIOLATION DATE"
+      showAny="true"
+    ></osl-select-control>
+    <osl-select-control
+      data=["https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1","https://d14xp4vykd1up4.cloudfront.net/data-query/656e38e4706aae0008b21e17","https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f","https://d14xp4vykd1up4.cloudfront.net/data-query/656e782d69e2370008020013","https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa","https://d14xp4vykd1up4.cloudfront.net/data-query/656e77fa69e2370008020012","https://d14xp4vykd1up4.cloudfront.net/data-query/6532789178d66b0009321d78","https://d14xp4vykd1up4.cloudfront.net/data-query/653289411fc91e0008ec7996","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47203443a800080913bd","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47483443a800080913be","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47d63443a800080913bf"]
+      option="end"
+      optionsData="https://d14xp4vykd1up4.cloudfront.net/data-query/656e304998b5d40008de1bb7"
+      optionsDataValueColumn="VIOLATION DATE"
+      title="End date"
+      initialValue="*"
+      showAny="true"
+    ></osl-select-control>
+    <osl-select-control
+      data=["https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1","https://d14xp4vykd1up4.cloudfront.net/data-query/656e38e4706aae0008b21e17","https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f","https://d14xp4vykd1up4.cloudfront.net/data-query/656e782d69e2370008020013","https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa","https://d14xp4vykd1up4.cloudfront.net/data-query/656e77fa69e2370008020012","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47203443a800080913bd","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47483443a800080913be","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47d63443a800080913bf"]
+      option="crashtype"
+      optionsData="https://d14xp4vykd1up4.cloudfront.net/data-query/656e61ef9733450008ec83f9"
+      optionsDataValueColumn="FIRST_CRASH_TYPE"
+      title="Crash Type"
+      multipleSelect="true"
+      initialValue="*"
+      showAny="true"
+    ></osl-select-control>
+    <osl-select-control
+      data=["https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1","https://d14xp4vykd1up4.cloudfront.net/data-query/656e38e4706aae0008b21e17","https://d14xp4vykd1up4.cloudfront.net/data-query/6532789178d66b0009321d78","https://d14xp4vykd1up4.cloudfront.net/data-query/653289411fc91e0008ec7996","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47203443a800080913bd","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47483443a800080913be","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47d63443a800080913bf"]
+      option="crashhour"
+      optionsData="https://d14xp4vykd1up4.cloudfront.net/data-query/656e7a6c69e2370008020014"
+      optionsDataValueColumn="CRASH_HOUR"
+      title="Crash Hour"
+      subTitle="Number is start of hour, (eg, 0 is midnight, 13 is 1pm)"
+      multipleSelect="true"
+      initialValue="*"
+      showAny="true"
+    ></osl-select-control>
+    </div>
+  </div>  
+</sp-theme>
+<osl-tabs>
+  <div data-tab="Community Areas" style="height:80vh;width:100%;">
+    <div>
+      <osl-select-control
+            data=["https://d14xp4vykd1up4.cloudfront.net/data-query/656e38e4706aae0008b21e17"]
+            option="community"
+            optionsData="https://d14xp4vykd1up4.cloudfront.net/data-query/656e2ffe98b5d40008de1bb6"
+            optionsDataValueColumn="area_numbe"
+            optionsDataLabelColumn="community"
+            title="Select a Community Area"
+            initialValue="43"
+            showAny="true"
+        ></osl-select-control>
+    </div>
+    <div style="padding:1rem 0;">
+      <osl-eq-grid
+          breakpoint="lg"
+        >
+      <osl-stat
+        title="Crashes"
+        property="CRASH_COUNT"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e38e4706aae0008b21e17'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Injuries from Crashes"
+        property="CRASH_INJURIES"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e38e4706aae0008b21e17'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Fatalities from Crashes"
+        property="CRASH_FATALITIES"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e38e4706aae0008b21e17'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Speed Camera Tickets"
+        property="SPEED_VIOLATIONS"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e38e4706aae0008b21e17'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Right Light tickets"
+        property="Red Light Violations"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e38e4706aae0008b21e17'
+      >
+      </osl-stat>
+    </osl-eq-grid>
+    </div>
+    <osl-eq-grid breakpoint="lg">
+      <div style="height:100%;width:100%">
+
+      <osl-glmap 
+      mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json" 
+      legendPosition="top-left" 
+      showNavigation='true'
+      showSingleLayer='true'
+    mapGroup="1"
+      >
+      <osl-map-layer 
+        legendTitle="Red Light Tickets" 
+        visible='false' 
+        geoColumn="geometry" 
+        dataColumn="Red Light Violations"
+        type="continuous" 
+        bins='5' 
+        colorScheme="OrRd" 
+        geoType="WKB"
+        geoId="community"
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        beforeId="water" 
+        method="QNT" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+      >
+      </osl-map-layer>     
+
+      <osl-map-layer 
+        legendTitle="Speed Tickets" 
+        visible='true' 
+        geoType="WKB" 
+        geoColumn="geometry" 
+        dataColumn="SPEED_VIOLATIONS"
+        type="continuous" 
+        bins='5' 
+        colorScheme="RdPu" 
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        layer="polygon" 
+        beforeId="water" 
+        method="JNK" 
+        geoId="community" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+      >
+      </osl-map-layer>
+      <osl-map-layer 
+        legendTitle="Crashes" 
+        visible='false' 
+        geoType="WKB" 
+        geoColumn="geometry" 
+        dataColumn="CRASH_COUNT"
+        type="continuous" 
+        bins='5' 
+        colorScheme="PuRd" 
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        layer="polygon" 
+        beforeId="water" 
+        method="QNT" 
+        geoId="community" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+      >
+      </osl-map-layer>
+      <osl-map-layer 
+        legendTitle="Injuries from Crashes" 
+        visible='false' 
+        geoType="WKB" 
+        geoColumn="geometry" 
+        dataColumn="CRASH_INJURIES"
+        type="continuous" 
+        bins='5' 
+        colorScheme="YlOrRd" 
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        layer="polygon" 
+        beforeId="water" 
+        method="QNT" 
+        geoId="community" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+      >
+      </osl-map-layer>
+     <osl-map-layer 
+      legendTitle="Fatalities from Crashes" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="CRASH_FATALITIES"
+      type="continuous" 
+      bins='5' 
+      colorScheme="RdPu"
+      filled='true' 
+      attribution="IDOT Crash Data" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="community" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    >
+    </osl-map-layer>   
+     <osl-map-layer 
+      legendTitle="Percent Black or African American" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="pct_black"
+      labelFormat="percent"
+      type="continuous" 
+      bins='5' 
+      colorScheme="GnBu" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="community" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    >
+    </osl-map-layer>   
+     <osl-map-layer 
+      legendTitle="Percent Hispanic" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="pct_hispanic"
+      labelFormat="percent"
+      type="continuous" 
+      bins='5' 
+      colorScheme="PuBu" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="community" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    >
+    </osl-map-layer>   
+
+    <osl-map-layer 
+      legendTitle="Percent Walk or Bike to Work" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="pct_walk_bike"
+      labelFormat="percent"
+      type="continuous" 
+      bins='5' 
+      colorScheme="PuBuGn" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="community" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    >
+    </osl-map-layer>   
+    <osl-map-layer 
+      legendTitle="Median Income" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="MEDINC"
+      labelFormat="currency:usd"
+      type="continuous" 
+      bins='5' 
+      colorScheme="YlGn" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="community" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    >
+    </osl-map-layer>   
+    <osl-map-layer
+  legendTitle="Community Areas"
+  visible="true"
+  stroked="true"
+  filled="false"
+  geoType="WKB"
+  geoColumn="geometry"
+  layer="line"
+  type="static"
+  staticStroke="[0,0,0]"
+  geoId="community"
+  data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+  lineWidthMaxPixels="5"
+  lineWidthMinPixels="2"
+  fixed="true"
+></osl-map-layer>
+      <osl-map-layer
+    legendTitle="Community Areas Labels"
+    visible="true"
+    stroked="false"
+    filled="false"
+    geoType="WKB"
+    geoColumn="geometry"
+    layer="text"
+    type="static"
+    staticRadius="100"
+    textColumn="community"
+    textSizeScale="5"
+    textSize="64"
+    textMaxWidth="400"
+    textSizeMaxPixels="16"
+    geoId="community"
+    data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    geoOperation="centroid"
+    fixed="true"
+  ></osl-map-layer>
+  </osl-glmap></div>
+
+  <div style="height:100%;width:100%">
+
+  <osl-glmap 
+    mapGroup="1"
+    mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json" 
+    legendPosition="top-left" 
+    showNavigation='true'
+    >
+      <osl-map-layer
+    legendTitle="Community Areas Labels"
+    visible="true"
+    stroked="false"
+    filled="false"
+    geoType="WKB"
+    geoColumn="geometry"
+    layer="text"
+    type="static"
+    staticRadius="100"
+    textColumn="community"
+    textSizeScale="5"
+    textSize="64"
+    textMaxWidth="400"
+    textSizeMaxPixels="16"
+    geoId="community"
+    data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    geoOperation="centroid"
+    fixed="true"
+  ></osl-map-layer>
+    <osl-map-layer
+      layer="circle"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/6532789178d66b0009321d78"
+      geoColumn="geometry"
+      geoType="WKB"
+      circleRadius="10"
+      pointRadiusMaxPixels="10"
+      radiusUnits="pixels"
+      fixedRadius="true"
+      dataColumn="Red Light Violations"
+      legendtitle="Red Light Camera Locations and Violations"
+      visible="false"
+    >
+    </osl-map-layer>
+    <osl-map-layer
+      layer="circle"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/653289411fc91e0008ec7996"
+      geoColumn="geometry"
+      geoType="WKB"
+      circleRadius="10"
+      pointRadiusMaxPixels="10"
+      radiusUnits="pixels"
+      fixedRadius="true"
+      dataColumn="SPEED_VIOLATIONS"
+      legendtitle="Speed Camera Locations and Violations"
+      visible="true"
+    >
+    </osl-map-layer>
+  </osl-glmap>
+  </div>
+  </osl-eq-grid>
+  </div>
+</div>
+
+<div data-tab="Census Tracts" style="height:80vh;width:100%;">
+  <div>
+    <osl-select-control
+      data=["https://d14xp4vykd1up4.cloudfront.net/data-query/656e77fa69e2370008020012"]
+      option="tract"
+      optionsData="https://d14xp4vykd1up4.cloudfront.net/data-query/656e61539733450008ec83f7"
+      optionsDataValueColumn="FIPS"
+      title="Select a Census Tract"
+      initialValue="17031839700"
+      showAny="true"
+    ></osl-select-control>
+  </div>
+    <div style="padding:1rem 0;">
+      <osl-eq-grid
+          breakpoint="lg"
+        >
+      <osl-stat
+        title="Crashes"
+        property="CRASH_COUNT"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e77fa69e2370008020012'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Injuries from Crashes"
+        property="CRASH_INJURIES"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e77fa69e2370008020012'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Fatalities from Crashes"
+        property="CRASH_FATALITIES"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e77fa69e2370008020012'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Speed Camera Tickets"
+        property="SPEED VIOLATIONS"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e77fa69e2370008020012'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Right Light tickets"
+        property="RED_LIGHT_VIOLATIONS"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e77fa69e2370008020012'
+      >
+      </osl-stat>
+    </osl-eq-grid>
+    </div>
+    <osl-eq-grid breakpoint="lg">
+      <div style="height:100%;width:100%">
+
+      <osl-glmap 
+      mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json" 
+      legendPosition="top-left" 
+      showNavigation='true'
+      showSingleLayer='true'
+    mapGroup="1"
+      >
+      <osl-map-layer 
+        legendTitle="Red Light Tickets" 
+        visible='false' 
+        geoColumn="geometry" 
+        dataColumn="RED_LIGHT_VIOLATIONS"
+        type="continuous" 
+        bins='5' 
+        colorScheme="OrRd" 
+        geoType="WKB"
+        geoId="FIPS"
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        beforeId="water" 
+        method="QNT" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa"
+      >
+      </osl-map-layer>     
+
+      <osl-map-layer 
+        legendTitle="Speed Tickets" 
+        visible='true' 
+        geoType="WKB" 
+        geoColumn="geometry" 
+        dataColumn="SPEED VIOLATIONS"
+        type="continuous" 
+        bins='5' 
+        colorScheme="RdPu" 
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        layer="polygon" 
+        beforeId="water" 
+        method="JNK" 
+        geoId="FIPS" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa"
+      >
+      </osl-map-layer>
+      <osl-map-layer 
+        legendTitle="Crashes" 
+        visible='false' 
+        geoType="WKB" 
+        geoColumn="geometry" 
+        dataColumn="CRASH_COUNT"
+        type="continuous" 
+        bins='5' 
+        colorScheme="PuRd" 
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        layer="polygon" 
+        beforeId="water" 
+        method="QNT" 
+        geoId="FIPS" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa"
+      >
+      </osl-map-layer>
+      <osl-map-layer 
+        legendTitle="Injuries from Crashes" 
+        visible='false' 
+        geoType="WKB" 
+        geoColumn="geometry" 
+        dataColumn="CRASH_INJURIES"
+        type="continuous" 
+        bins='5' 
+        colorScheme="YlOrRd" 
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        layer="polygon" 
+        beforeId="water" 
+        method="QNT" 
+        geoId="FIPS" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa"
+      >
+      </osl-map-layer>
+     <osl-map-layer 
+      legendTitle="Fatalities from Crashes" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="CRASH_FATALITIES"
+      type="continuous" 
+      bins='5' 
+      colorScheme="RdPu"
+      filled='true' 
+      attribution="IDOT Crash Data" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="FIPS" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa"
+    >
+    </osl-map-layer>   
+     <osl-map-layer 
+      legendTitle="Percent Black or African American" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="pct_black"
+      labelFormat="percent"
+      type="continuous" 
+      bins='5' 
+      colorScheme="GnBu" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="FIPS" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa"
+    >
+    </osl-map-layer>   
+     <osl-map-layer 
+      legendTitle="Percent Hispanic" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="pct_hispanic"
+      labelFormat="percent"
+      type="continuous" 
+      bins='5' 
+      colorScheme="PuBu" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="FIPS" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa"
+    >
+    </osl-map-layer>   
+
+    <osl-map-layer 
+      legendTitle="Percent Walk or Bike to Work" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="pct_walk_bike"
+      labelFormat="percent"
+      type="continuous" 
+      bins='5' 
+      colorScheme="PuBuGn" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="FIPS" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa"
+    >
+    </osl-map-layer>   
+    <osl-map-layer 
+      legendTitle="Median Income" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="median hh income"
+      labelFormat="currency:usd"
+      type="continuous" 
+      bins='5' 
+      colorScheme="YlGn" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="FIPS" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e62659733450008ec83fa"
+    >
+    </osl-map-layer>   
+      <osl-map-layer
+    legendTitle="Community Areas Labels"
+    visible="true"
+    stroked="false"
+    filled="false"
+    geoType="WKB"
+    geoColumn="geometry"
+    layer="text"
+    type="static"
+    staticRadius="100"
+    textColumn="community"
+    textSizeScale="5"
+    textSize="64"
+    textMaxWidth="400"
+    textSizeMaxPixels="16"
+    geoId="community"
+    data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    geoOperation="centroid"
+    fixed="true"
+  ></osl-map-layer>
+  </osl-glmap></div>
+
+  <div style="height:100%;width:100%">
+
+  <osl-glmap 
+    mapGroup="1"
+    mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json" 
+    legendPosition="top-left" 
+    showNavigation='true'
+    >
+      <osl-map-layer
+    legendTitle="Community Areas Labels"
+    visible="true"
+    stroked="false"
+    filled="false"
+    geoType="WKB"
+    geoColumn="geometry"
+    layer="text"
+    type="static"
+    staticRadius="100"
+    textColumn="community"
+    textSizeScale="5"
+    textSize="64"
+    textMaxWidth="400"
+    textSizeMaxPixels="16"
+    geoId="community"
+    data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    geoOperation="centroid"
+    fixed="true"
+  ></osl-map-layer>
+    <osl-map-layer
+      layer="circle"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/6532789178d66b0009321d78"
+      geoColumn="geometry"
+      geoType="WKB"
+      circleRadius="10"
+      pointRadiusMaxPixels="10"
+      radiusUnits="pixels"
+      fixedRadius="true"
+      dataColumn="Red Light Violations"
+      legendtitle="Red Light Camera Locations and Violations"
+      visible="false"
+    >
+    </osl-map-layer>
+    <osl-map-layer
+      layer="circle"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/653289411fc91e0008ec7996"
+      geoColumn="geometry"
+      geoType="WKB"
+      circleRadius="10"
+      pointRadiusMaxPixels="10"
+      radiusUnits="pixels"
+      fixedRadius="true"
+      dataColumn="SPEED_VIOLATIONS"
+      legendtitle="Speed Camera Locations and Violations"
+      visible="true"
+    >
+    </osl-map-layer>
+  </osl-glmap>
+  </div>
+  </osl-eq-grid>
+  </div>
+</div>
+</div>
+
+<div data-tab="Zip Codes" style="height:80vh;width:100%;">
+  <div>
+    <osl-select-control
+      data=["https://d14xp4vykd1up4.cloudfront.net/data-query/656e782d69e2370008020013"]
+      option="zip"
+      optionsData="https://d14xp4vykd1up4.cloudfront.net/data-query/656e613d9733450008ec83f6"
+      optionsDataValueColumn=FIPS
+      title="Select a Zip Code"
+      initialValue="60640"
+      showAny="true"
+    ></osl-select-control>
+  </div>
+    <div style="padding:1rem 0;">
+      <osl-eq-grid
+          breakpoint="lg"
+        >
+      <osl-stat
+        title="Crashes"
+        property="CRASH_COUNT"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e782d69e2370008020013'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Injuries from Crashes"
+        property="CRASH_INJURIES"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e782d69e2370008020013'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Fatalities from Crashes"
+        property="CRASH_FATALITIES"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e782d69e2370008020013'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Speed Camera Tickets"
+        property="SPEEDVIOLATIONS"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e782d69e2370008020013'
+      >
+      </osl-stat>
+      <osl-stat
+        title="Right Light tickets"
+        property="Red Light Violations"
+        data='https://d14xp4vykd1up4.cloudfront.net/data-query/656e782d69e2370008020013'
+      >
+      </osl-stat>
+    </osl-eq-grid>
+    </div>
+    <osl-eq-grid breakpoint="lg">
+      <div style="height:100%;width:100%">
+
+      <osl-glmap 
+      mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json" 
+      legendPosition="top-left" 
+      showNavigation='true'
+      showSingleLayer='true'
+    mapGroup="1"
+      >
+      <osl-map-layer 
+        legendTitle="Red Light Tickets" 
+        visible='false' 
+        geoColumn="geometry" 
+        dataColumn="Red Light Violations"
+        type="continuous" 
+        bins='5' 
+        colorScheme="OrRd" 
+        geoType="WKB"
+        geoId="zip"
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        beforeId="water" 
+        method="QNT" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f"
+      >
+      </osl-map-layer>     
+
+      <osl-map-layer 
+        legendTitle="Speed Tickets" 
+        visible='true' 
+        geoType="WKB" 
+        geoColumn="geometry" 
+        dataColumn="SPEED_VIOLATIONS"
+        type="continuous" 
+        bins='5' 
+        colorScheme="RdPu" 
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        layer="polygon" 
+        beforeId="water" 
+        method="JNK" 
+        geoId="zip" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f"
+      >
+      </osl-map-layer>
+      <osl-map-layer 
+        legendTitle="Crashes" 
+        visible='false' 
+        geoType="WKB" 
+        geoColumn="geometry" 
+        dataColumn="CRASH_COUNT"
+        type="continuous" 
+        bins='5' 
+        colorScheme="PuRd" 
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        layer="polygon" 
+        beforeId="water" 
+        method="QNT" 
+        geoId="zip" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f"
+      >
+      </osl-map-layer>
+      <osl-map-layer 
+        legendTitle="Injuries from Crashes" 
+        visible='false' 
+        geoType="WKB" 
+        geoColumn="geometry" 
+        dataColumn="CRASH_INJURIES"
+        type="continuous" 
+        bins='5' 
+        colorScheme="YlOrRd" 
+        filled='true' 
+        attribution="IDOT Crash Data" 
+        layer="polygon" 
+        beforeId="water" 
+        method="QNT" 
+        geoId="zip" 
+        stroked='true' 
+        data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f"
+      >
+      </osl-map-layer>
+     <osl-map-layer 
+      legendTitle="Fatalities from Crashes" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="CRASH_FATALITIES"
+      type="continuous" 
+      bins='5' 
+      colorScheme="RdPu"
+      filled='true' 
+      attribution="IDOT Crash Data" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="zip" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f"
+    >
+    </osl-map-layer>   
+     <osl-map-layer 
+      legendTitle="Percent Black or African American" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="pct_black"
+      labelFormat="percent"
+      type="continuous" 
+      bins='5' 
+      colorScheme="GnBu" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="zip" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f"
+    >
+    </osl-map-layer>   
+     <osl-map-layer 
+      legendTitle="Percent Hispanic" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="pct_hispanic"
+      labelFormat="percent"
+      type="continuous" 
+      bins='5' 
+      colorScheme="PuBu" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="zip" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f"
+    >
+    </osl-map-layer>   
+
+    <osl-map-layer 
+      legendTitle="Percent Walk or Bike to Work" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="pct_walk_bike"
+      labelFormat="percent"
+      type="continuous" 
+      bins='5' 
+      colorScheme="PuBuGn" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="zip" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f"
+    >
+    </osl-map-layer>   
+    <osl-map-layer 
+      legendTitle="Median Income" 
+      visible='false' 
+      geoType="WKB" 
+      geoColumn="geometry" 
+      dataColumn="median hh income"
+      labelFormat="currency:usd"
+      type="continuous" 
+      bins='5' 
+      colorScheme="YlGn" 
+      filled='true' 
+      attribution="CMAP" 
+      layer="polygon" 
+      beforeId="water" 
+      method="QNT" 
+      geoId="zip" 
+      stroked='true' 
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e755769e237000802000f"
+    >
+    
+
+    </osl-map-layer>   
+      <osl-map-layer
+    legendTitle="Community Areas Labels"
+    visible="true"
+    stroked="false"
+    filled="false"
+    geoType="WKB"
+    geoColumn="geometry"
+    layer="text"
+    type="static"
+    staticRadius="100"
+    textColumn="community"
+    textSizeScale="5"
+    textSize="64"
+    textMaxWidth="400"
+    textSizeMaxPixels="16"
+    geoId="community"
+    data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    geoOperation="centroid"
+    fixed="true"
+  ></osl-map-layer>
+  </osl-glmap></div>
+
+  <div style="height:100%;width:100%">
+
+  <osl-glmap 
+    mapGroup="1"
+    mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json" 
+    legendPosition="top-left" 
+    showNavigation='true'
+    >
+      <osl-map-layer
+    legendTitle="Community Areas Labels"
+    visible="true"
+    stroked="false"
+    filled="false"
+    geoType="WKB"
+    geoColumn="geometry"
+    layer="text"
+    type="static"
+    staticRadius="100"
+    textColumn="community"
+    textSizeScale="5"
+    textSize="64"
+    textMaxWidth="400"
+    textSizeMaxPixels="16"
+    geoId="community"
+    data="https://d14xp4vykd1up4.cloudfront.net/data-query/656e27f621c45800084f8ae1"
+    geoOperation="centroid"
+    fixed="true"
+  ></osl-map-layer>
+    <osl-map-layer
+      layer="circle"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/6532789178d66b0009321d78"
+      geoColumn="geometry"
+      geoType="WKB"
+      dataColumn="Red Light Violations"
+      legendtitle="Red Light Camera Locations and Violations"
+      visible="false"
+      circleRadius="10"
+      pointRadiusMaxPixels="10"
+      radiusUnits="pixels"
+      fixedRadius="true"
+    >
+    </osl-map-layer>
+    <osl-map-layer
+      layer="circle"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/653289411fc91e0008ec7996"
+      geoColumn="geometry"
+      geoType="WKB"
+      circleRadius="10"
+      pointRadiusMaxPixels="10"
+      radiusUnits="pixels"
+      fixedRadius="true"
+      dataColumn="SPEED_VIOLATIONS"
+      legendtitle="Speed Camera Locations and Violations"
+      visible="true"
+    >
+    </osl-map-layer>
+  </osl-glmap>
+  </div>
+  </osl-eq-grid>
+  </div>
+</div>
+</div>
+<div data-tab="Over Time" style="width:100%;min-height:100vh;">  <div>
+    <osl-eq-grid breakpoint="lg">
+      <osl-select-control
+        data=["https://d14xp4vykd1up4.cloudfront.net/data-query/656f47203443a800080913bd","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47d63443a800080913bf","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47483443a800080913be"]
+        option="community"
+        optionsData="https://d14xp4vykd1up4.cloudfront.net/data-query/656e2ffe98b5d40008de1bb6"
+        optionsDataValueColumn=area_numbe
+        optionsDataLabelColumn=community
+        title="Filter by Community Area"
+        initialValue="*"
+        showAny="true"
+      ></osl-select-control>
+      <osl-select-control
+        data=["https://d14xp4vykd1up4.cloudfront.net/data-query/656f47203443a800080913bd","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47d63443a800080913bf","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47483443a800080913be"]
+        option="tract"
+        optionsData="https://d14xp4vykd1up4.cloudfront.net/data-query/656e61539733450008ec83f7"
+        optionsDataValueColumn=FIPS
+        title="Filter by Census Tract"
+        initialValue="*"
+        showAny="true"
+      ></osl-select-control>
+      <osl-select-control
+          data=["https://d14xp4vykd1up4.cloudfront.net/data-query/656f47203443a800080913bd","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47d63443a800080913bf","https://d14xp4vykd1up4.cloudfront.net/data-query/656f47483443a800080913be"]
+        option="zip"
+        optionsData="https://d14xp4vykd1up4.cloudfront.net/data-query/656e613d9733450008ec83f6"
+        optionsDataValueColumn=FIPS
+        title="Filter by Zip Code / Postal Code" 
+        initialValue="*"
+        showAny="true"
+      ></osl-select-control>
+    </osl-eq-grid>
+  </div>
+  <div style="height:50vh;">
+    <osl-plot
+      colorLegend="true"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656f47203443a800080913bd"
+      marginBottom="80"
+      marginLeft="80"
+      marginRight="80"
+      title="Crash Count Over Time"
+    >
+      <osl-line
+        x="date"
+        y="CRASH_COUNT"
+      ></osl-line>
+    </osl-plot>
+    </div>
+  <div style="height:50vh;">
+    <osl-plot
+      colorLegend="true"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656f47203443a800080913bd"
+      marginBottom="80"
+      marginLeft="80"
+      marginRight="80"
+      title="Crash Injuries Over Time"
+      
+      colorScheme="turbo"
+    >
+      <osl-line
+        x="date"
+        y="CRASH_INJURIES"
+      ></osl-line>
+    </osl-plot>
+  </div>
+  <div style="height:50vh;">
+    <osl-plot
+      colorLegend="true"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656f47203443a800080913bd"
+      marginBottom="80"
+      marginLeft="80"
+      marginRight="80"
+      title="Crash Fatalities Over Time"
+      
+      colorScheme="turbo"
+    >
+      <osl-line
+        x="date"
+        y="CRASH_FATALITIES"
+      ></osl-line>
+    </osl-plot>
+  </div>
+  <div style="height:50vh;">
+    <osl-plot
+      colorLegend="true"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656f47483443a800080913be"
+      marginBottom="80"
+      marginLeft="80"
+      marginRight="80"
+      title="Automated Speed Tickets Over Time"
+      
+      colorScheme="turbo"
+    >
+      <osl-line
+        x="date"
+      y="SPEED_VIOLATIONS"
+      ></osl-line>
+    </osl-plot>
+    <osl-plot
+      colorLegend="true"
+      data="https://d14xp4vykd1up4.cloudfront.net/data-query/656f47d63443a800080913bf"
+      marginBottom="80"
+      marginLeft="80"
+      marginRight="80"
+      title="Automated Red Light Tickets Over Time"
+    >
+      <osl-line
+        x="date"
+      y="RED_LIGHT_VIOLATIONS"
+      ></osl-line>
+    </osl-plot>
+    </div>
+  </div>
+  <div>
+  </div>
+  <div>
+  </div>
+</div> 
+</osl-tabs>
+
+</body>
+</html>
